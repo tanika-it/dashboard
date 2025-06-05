@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url("../fonts/Nunitoregular.woff"); 
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url("../fonts/Nunitobold.woff");
+    font-weight: bold; 
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url("../fonts/Nunitoextrabold.woff");
+    font-weight: 800; 
+}
+
+body {
+    font-family: Nunito, sans-serif;
+}
+
+.layout {
+    display: flex; 
+    min-height: 100vh; 
+}
+
+.sidebar {
+    width: 250px; 
+    flex-shrink: 0; 
+    background: #F7F7F7;
+    border-right: 1px solid #E2E2E2; 
+    position: relative; 
+    box-sizing: border-box;  
+    padding: 17px;
+}
+
+.logo {
+    padding: 25px 0;
+    text-align: center; 
+    display: block;
+}
+
+.navigation-item {
+    list-style: none;
+}
+
+.navigation-item a { 
+    display: flex; 
+    text-decoration: none;
+    align-items: center; 
+    padding: 13px 15px; 
+}
+
+.navigation-item a span {
+    font-size: 14px;
+    line-height: 19px;
+    color: #858796;
+    margin-left: 10px;
+}
+
+.navigation-item.active a,
+.navigation-item a:hover {
+    border-radius: 5px;
+    background-color: #467DF2;
+    svg path {
+        fill: #FFFFFF;
+    }
+    span {
+        color: #FFFFFF;
+    }
+} 
+
+.feedback {
+    position: fixed; 
+    padding: 13px 12px;
+    max-width: 190px; 
+    left: 16px; 
+    bottom: 16px;
+    border: 1px solid transparent; 
+    border-radius: 5px;
+}
+
+.feedback:hover {
+    border: 1px solid rgb(70, 125, 242);
+}
+
+.feedback img {
+    float: left;
+    margin-right: 6px;
+    margin-bottom: 7px; 
+}
+
+.feedback span {
+    color: #4F4E4F;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.feedback-link {
+    text-decoration: none;
+    color:#0042EB;
+} 
+
+.content {
+    flex-grow: 1;
+}
+
+.header {
+    background: #F7F7F7;
+    border-bottom: 1px solid #E2E2E2;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-left,
+.header-right,
+.header-left-tasks {
+    display: flex;
+    align-items: center;
+}
+
+.header-left-tasks {
+    position: relative;
+}
+
+.header-left-menu {
+    margin-right: 60px;
+}
+
+.header-left-text {
+    color: #858796;
+    font-size: 14px;
+    line-height: 19px;
+    text-decoration: none;
+}
+
+.header-left-team:hover {
+    color: #3D63D2;
+}
+
+.header-left-tasks:hover {
+    span {
+        color: #3D63D2;
+    }
+    svg path {
+        fill: #3D63D2;
+    }
+    .header-left-text {
+        color: #3D63D2;
+    }
+}
+
+.header-left-team {
+    margin-right: 40px;
+}
+
+.header-left-tasks {
+    text-decoration: none;
+    position: relative;
+}
+
+.header-left-tasks svg {
+    margin-left: 11px;
+}
+
+.task-items {
+    display: none;
+    position: absolute;
+    width: 150px;
+    height: 113px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px 0px rgba(102, 102, 102, 0.15);
+    padding: 30px 20px 15px 20px; 
+    box-sizing: border-box;
+    top: 20px;
+    left: -5px;
+}
+
+.task-item {
+    color: rgb(104, 100, 100);
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.header-left-tasks:hover .task-items { 
+    display: block;
+}
+
+.header-search {
+    position: relative;
+    margin-right: 40px;
+}
+
+.header-search svg {
+    position: absolute;
+    padding: 12px 10px 14px 20px;
+}
+
+.header-search-input {
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 10px;
+    background: rgb(239, 239, 245);
+    font-size: 14px;
+    line-height: 19px;
+    color: black;
+    padding-left: 44px; 
+    width: 373px;
+    height: 40px;
+}
+
+.header-search-input::placeholder {
+    color: #b3b3b3;
+}
+
+.header-statistics svg {
+    margin-right: 40px;
+}
+
+.header-statistics:hover {
+    svg path {
+        fill: #467DF2;
+    }
+}
+
+.button {
+    background: #467DF2;
+    cursor: pointer;
+    border: 0;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.button:hover {
+    background: #2F54A3;
+}
+
+.header-upload-button {
+    width: 83px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.main-content {
+    padding: 25px 55px 73px 40px;
+    background: #EDEEF3;
+}
+
+.main-content-title {
+    color: rgb(79, 78, 79);
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 48px;
+    margin-bottom: 20px;
+}
+
+.video-items {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.video-item {
+    margin: 20px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    max-width: 350px;
+    position: relative;
+}
+
+.video-item:hover { 
+    box-shadow: 0px 4px 20px 0px rgba(102, 102, 102, 0.5);
+}
+
+.video-status {
+    border-radius: 5px;
+    height: 22px;
+    font-size: 14px;
+    line-height: 14px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    position: absolute;
+    left: 12px;
+    top: 12px;
+}
+
+.status-moderation {
+    background: rgba(247, 247, 247, 0.8);
+    width: 115px;
+    color: rgb(79, 78, 79);
+}
+
+.status-published {
+    background: rgb(198, 224, 195);
+    width: 83px;
+    color: rgb(2, 121, 0);
+}
+
+.status-error {
+    background: rgba(255, 188, 188, 0.8);
+    width: 118px;
+    color: rgb(219, 12, 12);
+}
+
+.video-info {
+    padding: 20px 26px;
+}
+
+.video-title {
+    color: rgb(79, 78, 79);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 25px;
+    padding-bottom: 8px;
+}
+
+.video-loading-time {
+    color: rgb(79, 78, 79);
+    font-size: 15px;
+    line-height: 30px;
+    padding-bottom: 18px;
+}
+
+.video-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.video-action-ellipse {
+    display: flex;
+}
+
+.video-action:hover {
+    svg path {
+        fill: #3D63D2;
+    }
+}
+
+.video-action-ellipse:hover {
+    svg ellipse {
+        fill: #3D63D2;
+    }
+}
+
+.support-button {
+    transform: rotate(-90deg);
+    border-radius: 10px 10px 0 0;
+    width: 186px;
+    height: 39px;
+    top: 420px;
+    right: -75px; 
+    position: fixed;
+}
+
+.support-button svg {
+    transform: rotate(90deg);
+    margin-right: 10px;
+}
+
+.support-button:hover { 
+    height: 49px;
+    transition: 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
